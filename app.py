@@ -66,7 +66,7 @@ def decoraciones():
     # Si manejas fechas y horas
     
 
-@app.route("/productos/buscar", methods=["GET"])
+@app.route("/decoraciones/buscar", methods=["GET"])
 def buscarProductos():
     if not con.is_connected():
         con.reconnect()
