@@ -1,1 +1,22 @@
-
+<table class="table table-sm">
+    <thead class="table-active">
+        <tr>
+            <th>Id</th>
+            <th>Clave</th>
+            <th>Nombre Material</th>
+            <th>Cantidad</th>
+            <th>Precio</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for paquete in paquetes %}
+        <tr>
+            <td>{{ paquete.idPaquete }}</td>
+            <td>{{ paquete.Clave }}</td>
+            <td>{{ paquete.nombreMaterial }}</td>
+            <td>{{ paquete.Cantidad }}</td>
+            <td>{{ paquete.Precio }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
