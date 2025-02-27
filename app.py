@@ -77,6 +77,29 @@ def decoraciones():
     return render_template("decoraciones.html", decoraciones=registros)    
     
 
+@app.route("/paquetes")
+def paquetes():
+    if not con.is_connected():
+        con.reconnect()
+
+    cursor = con.cursor(dictionary=True)
+    sql    = """
+    SELECT idPaquete,
+           Clave,
+           nombreMaterial,
+           Cantidad,
+           Precio
+
+    FROM paquetes p
+    INNER JOIN decoraciones d ON p.idDecoracion = d.idDecoracion
+    LIMIT 10 OFFSET 0
+    """
+
+    cursor.execute(sql)
+    registros = cursor.fetchall()
+
+    return render_template("paquetes.html", paquetes=registros)
+
 @app.route("/decoraciones/buscar", methods=["GET"])
 def buscarProductos():
     if not con.is_connected():
