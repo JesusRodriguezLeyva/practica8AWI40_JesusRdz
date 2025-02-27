@@ -19,9 +19,9 @@ app.config(function ($routeProvider, $locationProvider) {
         templateUrl: "/app",
         controller: "appCtrl"
     })
-    .when("/productos", {
-        templateUrl: "/productos",
-        controller: "productosCtrl"
+    .when("/decoraciones", {
+        templateUrl: "/decoraciones",
+        controller: "decoracionesCtrl"
     })
     .when("/alumnos", {
         templateUrl: "/alumnos",
@@ -86,7 +86,7 @@ app.run(["$rootScope", "$location", "$timeout", function($rootScope, $location, 
 app.controller("appCtrl", function ($scope, $http) {
     // alert("Hola, soy el controlador app")
 })
-app.controller("productosCtrl", function ($scope, $http) {
+app.controller("decoracionesCtrl", function ($scope, $http) {
     // alert("Hola, soy el controlador productos")
 })
 app.controller("alumnosCtrl", function ($scope, $http) {
