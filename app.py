@@ -64,6 +64,17 @@ def decoraciones():
     registros = cursor.fetchall()
 
     # Si manejas fechas y horas
+    # Si manejas fechas y horas
+    """
+    for registro in registros:
+        fechaIngreso = registro["fechaIngreso"]
+
+        registro["Fecha_Hora"] = fecha_hora.strftime("%Y-%m-%d %H:%M:%S")
+        registro["Fecha"]      = fecha_hora.strftime("%d/%m/%Y")
+        registro["Hora"]       = fecha_hora.strftime("%H:%M:%S")
+    """
+
+    return render_template("decoraciones.html", decoraciones=registros)    
     
 
 @app.route("/decoraciones/buscar", methods=["GET"])
